@@ -13,7 +13,7 @@ export default [
   {
     plugins: [
       dev({ port: process.env.PORT || 3000 }),
-      livereload('build'),
+      process.env.NODE_ENV !== 'production' && livereload('build'),
       replace({
         'process.env.NODE_ENV': process.env.NODE_ENV,
         'process.env.LAYER0_PREFETCH_HEADER_VALUE': '"1"',
