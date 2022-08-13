@@ -1,13 +1,13 @@
-import minifyHTML from 'rollup-plugin-minify-html-literals'
-import resolve from '@rollup/plugin-node-resolve'
-import livereload from 'rollup-plugin-livereload'
-import { terser } from 'rollup-plugin-terser'
-import commonjs from 'rollup-plugin-commonjs'
-import replace from '@rollup/plugin-replace'
-import summary from 'rollup-plugin-summary'
-import html from '@web/rollup-plugin-html'
-import dev from 'rollup-plugin-dev'
 import fg from 'fast-glob'
+import dev from 'rollup-plugin-dev'
+import html from '@web/rollup-plugin-html'
+import summary from 'rollup-plugin-summary'
+import replace from '@rollup/plugin-replace'
+import commonjs from 'rollup-plugin-commonjs'
+import { terser } from 'rollup-plugin-terser'
+import livereload from 'rollup-plugin-livereload'
+import resolve from '@rollup/plugin-node-resolve'
+import minifyHTML from 'rollup-plugin-minify-html-literals'
 
 export default [
   {
@@ -15,6 +15,7 @@ export default [
       dev({ port: process.env.PORT || 3000 }),
       process.env.NODE_ENV !== 'production' && livereload('build'),
       replace({
+        preventAssignment: true,
         'process.env.NODE_ENV': process.env.NODE_ENV,
         'process.env.LAYER0_PREFETCH_HEADER_VALUE': '"1"',
         'process.env.LAYER0_PREFETCH_CACHE_NAME': '"prefetch"',
@@ -55,6 +56,7 @@ export default [
     input: './src/service-worker.js',
     plugins: [
       replace({
+        preventAssignment: true,
         'process.env.NODE_ENV': '"production"',
         'process.env.LAYER0_PREFETCH_HEADER_VALUE': '"1"',
         'process.env.LAYER0_PREFETCH_CACHE_NAME': '"prefetch"',
