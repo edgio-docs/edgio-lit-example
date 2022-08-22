@@ -12,16 +12,10 @@ import minifyHTML from 'rollup-plugin-minify-html-literals'
 export default [
   {
     plugins: [
-      dev({ port: process.env.PORT || 3000 }),
+      dev({ port: process.env.PORT || 3000, dirname: 'build', spa: true }),
       process.env.NODE_ENV !== 'production' && livereload('build'),
-      replace({
-        preventAssignment: true,
-        'process.env.NODE_ENV': process.env.NODE_ENV,
-        'process.env.LAYER0_PREFETCH_HEADER_VALUE': '"1"',
-        'process.env.LAYER0_PREFETCH_CACHE_NAME': '"prefetch"',
-      }),
       html({
-        input: './src/index.html',
+        input: 'src/index.html',
       }),
       resolve(),
       minifyHTML(),

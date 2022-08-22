@@ -5,10 +5,13 @@ import MyApp from './components/MyApp'
 export class App extends LitElement {
   constructor() {
     super()
+    window.css = css
+    window.html = html
+    window.LitElement = LitElement
   }
 
   render() {
-    return MyApp(html, css, LitElement)
+    return MyApp(this.pageData)
   }
 }
 

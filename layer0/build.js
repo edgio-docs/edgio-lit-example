@@ -7,7 +7,8 @@ const builder = new DeploymentBuilder(appDir)
 module.exports = async function build(options) {
   try {
     builder.clearPreviousBuildOutput()
-    let command = 'NODE_ENV=production npx rollup -c'
+    builder.removeSync('build')
+    let command = 'NODE_ENV=production npx rollup -c && npx tailwindcss -m -i ./src/app.css -o build/app.css'
     await builder.exec(command)
     await builder.build()
   } catch (e) {
