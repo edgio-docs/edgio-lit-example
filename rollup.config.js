@@ -27,7 +27,7 @@ export default [
       summary(),
       commonjs({
         namedExports: {
-          '@layer0/prefetch': ['Prefetcher'],
+          '@edgio/prefetch': ['Prefetcher'],
         },
       }),
       {
@@ -65,7 +65,7 @@ export default [
       summary(),
       commonjs({
         namedExports: {
-          '@layer0/prefetch': ['Prefetcher'],
+          '@edgio/prefetch': ['Prefetcher'],
         },
       }),
     ],

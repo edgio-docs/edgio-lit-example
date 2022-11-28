@@ -1,4 +1,4 @@
-import { Prefetcher } from '../node_modules/@layer0/prefetch/sw/index.js'
+import { Prefetcher } from '../node_modules/@edgio/prefetch/sw/index.js'
 import { precacheAndRoute } from '../node_modules/workbox-precaching/index.js'
 import { skipWaiting, clientsClaim } from '../node_modules/workbox-core/index.js'
 

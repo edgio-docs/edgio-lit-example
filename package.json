@@ -1,14 +1,14 @@
 {
-  "name": "layer0-lit-example",
+  "name": "edgio-lit-example",
   "scripts": {
     "dev": "NODE_ENV=development rollup -c -w & npm run tailwindcss:dev",
     "build": "NODE_ENV=production rollup -c & npm run tailwindcss:build",
     "tailwindcss:dev": "tailwindcss -w -i ./src/app.css -o build/app.css",
     "tailwindcss:build": "tailwindcss -m -i ./src/app.css -o build/app.css",
-    "layer0:dev": "layer0 dev",
-    "layer0:build": "layer0 build",
-    "layer0:deploy": "layer0 deploy",
-    "layer0:production": "layer0 run --production",
+    "edgio:dev": "edgio dev",
+    "edgio:build": "edgio build",
+    "edgio:deploy": "edgio deploy",
+    "edgio:production": "edgio run --production",
     "format": "prettier --write '**/*' --ignore-unknown"
   },
   "dependencies": {
@@ -18,10 +18,10 @@
     "lit-html": "^2.0.0"
   },
   "devDependencies": {
-    "@layer0/cli": "^4.18.1",
-    "@layer0/core": "^4.18.1",
-    "@layer0/devtools": "^4.18.1",
-    "@layer0/prefetch": "^4.18.1",
+    "@edgio/cli": "^5.0.4",
+    "@edgio/core": "^5.0.4",
+    "@edgio/devtools": "^5.0.4",
+    "@edgio/prefetch": "^5.0.4",
     "@rollup/plugin-node-resolve": "^13.3.0",
     "@rollup/plugin-replace": "^4.0.0",
     "@web/rollup-plugin-copy": "^0.3.0",
